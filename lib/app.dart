@@ -2,6 +2,7 @@ import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:surprise/router/routes.dart';
 import 'package:surprise/views/home/home_page.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -94,11 +95,3 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   }
 }
 
-List<GetPage> getPages() {
-  return [
-    GetPage(
-      name: "/Home",
-      page: () => const HomePage(),
-    ), // 隐私协议提醒
-  ];
-}

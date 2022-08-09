@@ -14,10 +14,13 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
 // appBar: ,
       body: Container(
-        width: 100,
-        color: Colors.yellow,
-        child: Column(
-          children: const [Text("HelloWorld")],
+        width: 750.w,
+        color: Colors.blue[300],
+        child: Center(
+          child: Text(
+            "Hello Dog",
+            style: TextStyle(color: Colors.white, fontSize: 82.sp),
+          ),
         ),
       ),
     );
