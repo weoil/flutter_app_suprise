@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
         color: Colors.blue[300],
         child: Center(
           child: Text(
-            "Hello Dog",
+            "Hello - Dog",
             style: TextStyle(color: Colors.white, fontSize: 82.sp),
           ),
         ),
