@@ -5,17 +5,21 @@ import 'package:flutter/foundation.dart';
 class Api {
   static Dio? _dio;
   static Dio get dio {
-    _dio ??= Dio(BaseOptions(baseUrl: "/"));
+    if (_dio != null) {
+      return _dio as Dio;
+    }
+    _dio = Dio(BaseOptions(baseUrl: "/"));
     dio.transformer = DioTransformer(); // replace dio default transformer
     dio.interceptors.add(InterceptorsWrapper(onRequest: ((options, handler) {
       handler.next(options);
     })));
     return _dio!;
   }
-  static var get = _dio!.get;
-  static var post = _dio!.post;
-  static var put = _dio!.put;
-  static var delete = _dio!.delete;
+
+  static var get = dio.get;
+  static var post = dio.post;
+  static var put = dio.put;
+  static var delete = dio.delete;
 }
 
 class DioTransformer extends DefaultTransformer {
